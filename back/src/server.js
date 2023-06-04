@@ -63,8 +63,8 @@ app.post(
         return res.status(400).json({ errors: errors.array() });
       }
 
-      const imageData = req.body.imageData;
-      const preprocessedImg = preprocessImage(Buffer.from(imageData, 'base64'));
+      const imgData = req.body.imgData;
+      const preprocessedImg = preprocessImage(Buffer.from(imgData, 'base64'));
       const prediction = model.predict(preprocessedImg);
       const classIdx = prediction.argMax(1).dataSync()[0];
       const classes = ['Azul', 'Baleia', 'Branco', 'Lixa', 'Martelo', 'Tigre', 'Touro'];
