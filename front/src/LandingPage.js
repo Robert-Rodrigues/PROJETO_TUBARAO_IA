@@ -12,7 +12,6 @@ const LandingPage = () => {
 
   return (
     <div>
-      <h1>Advinhamos seu tubarão</h1>
       <ImageUploader onFormSubmit={handleFormSubmit} />
       {response && <ResponseDisplay responseData={response} />}
     </div>
